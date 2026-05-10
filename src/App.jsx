@@ -16,6 +16,7 @@ import PodcastDialogue from "./components/PodcastDialogue.jsx";
 import ProbabilitySpaceInteractive from "./components/ProbabilitySpaceInteractive.jsx";
 import PullQuote from "./components/PullQuote.jsx";
 import ReaderPrompt from "./components/ReaderPrompt.jsx";
+import ReaderSummary from "./components/ReaderSummary.jsx";
 import TableOfContents from "./components/TableOfContents.jsx";
 import YouTubeEmbed from "./components/YouTubeEmbed.jsx";
 
@@ -27,6 +28,7 @@ const componentMap = {
   probability: ProbabilitySpaceInteractive,
   pullquote: PullQuote,
   prompt: ReaderPrompt,
+  summary: ReaderSummary,
   youtube: YouTubeEmbed,
 };
 
@@ -40,7 +42,7 @@ function CommentCardsBlock({ items = commentCards }) {
   );
 }
 
-function InlineBlock({ block }) {
+function InlineBlock({ block, responses, onPromptAnswer }) {
   if (!block?.type) return null;
   const Component = componentMap[block.type];
   if (!Component) return null;
@@ -54,7 +56,18 @@ function InlineBlock({ block }) {
   }
 
   if (block.type === "prompt") {
-    return <Component {...readerPrompts[block.promptId]} />;
+    return (
+      <Component
+        id={block.promptId}
+        {...readerPrompts[block.promptId]}
+        response={responses[block.promptId]}
+        onAnswer={onPromptAnswer}
+      />
+    );
+  }
+
+  if (block.type === "summary") {
+    return <ReaderSummary prompts={readerPrompts} responses={responses} />;
   }
 
   return <Component {...block} />;
@@ -62,6 +75,10 @@ function InlineBlock({ block }) {
 
 function App() {
   const [theme, setTheme] = useState("dark");
+  const [responses, setResponses] = useState({});
+  const handlePromptAnswer = (id, response) => {
+    setResponses((current) => ({ ...current, [id]: response }));
+  };
   const tocItems = useMemo(
     () =>
       chapters.flatMap((chapter) => [
@@ -69,7 +86,7 @@ function App() {
         ...chapter.sections.map((section) => ({
           id: section.id,
           label: section.title,
-          type: "section",
+          type: section.level >= 3 ? "subsection" : "section",
         })),
       ]),
     [],
@@ -106,13 +123,23 @@ function App() {
           <article className="chapter" key={chapter.id}>
             <ChapterHeader {...chapter} />
             {chapter.sections.map((section) => (
-              <EssaySection key={section.id} id={section.id} title={section.title}>
+              <EssaySection
+                key={section.id}
+                id={section.id}
+                title={section.title}
+                level={section.level}
+              >
                 {section.marginNote && <MarginNote {...section.marginNote} />}
                 {section.paragraphs.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
                 ))}
                 {section.blocks?.map((block, index) => (
-                  <InlineBlock key={`${section.id}-${block.type}-${index}`} block={block} />
+                  <InlineBlock
+                    key={`${section.id}-${block.type}-${index}`}
+                    block={block}
+                    responses={responses}
+                    onPromptAnswer={handlePromptAnswer}
+                  />
                 ))}
               </EssaySection>
             ))}

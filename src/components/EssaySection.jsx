@@ -1,8 +1,10 @@
-function EssaySection({ id, title, children }) {
+function EssaySection({ id, title, level = 2, children }) {
+  const Heading = level >= 3 ? "h4" : "h3";
+
   return (
-    <section id={id} className="essay-section">
+    <section id={id} className={`essay-section section-level-${level}`}>
       <div className="section-rule" aria-hidden="true" />
-      <h3>{title}</h3>
+      <Heading>{title}</Heading>
       <div className="section-body">{children}</div>
     </section>
   );

@@ -1,8 +1,14 @@
-import { useState } from "react";
+function ReaderPrompt({ id, question, options = [], response, onAnswer }) {
+  const answer = response?.answer || "";
+  const intensity = response?.intensity || 50;
 
-function ReaderPrompt({ question, options = [] }) {
-  const [answer, setAnswer] = useState("");
-  const [intensity, setIntensity] = useState(50);
+  const setAnswer = (nextAnswer) => {
+    onAnswer(id, { answer: nextAnswer, intensity });
+  };
+
+  const setIntensity = (nextIntensity) => {
+    onAnswer(id, { answer, intensity: Number(nextIntensity) });
+  };
 
   return (
     <div className="reader-prompt">

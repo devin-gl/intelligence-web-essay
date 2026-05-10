@@ -33,8 +33,8 @@ const spaces = {
       "High probability of pattern generation, optimization, language mimicry, formal reasoning, and recombination.",
   },
   animal: {
-    label: "Animal Intelligence",
-    className: "animal-cloud",
+    label: "Chimpanzee Intelligence",
+    className: "chimp-cloud",
     traits: [
       "communication",
       "learning",
@@ -46,7 +46,42 @@ const spaces = {
       "subjective experience",
     ],
     description:
-      "High probability of embodied perception, social learning, signaling, tool use, and aesthetic display.",
+      "Close animal comparison: embodied social learning, tool use, emotional expression, and flexible problem solving.",
+  },
+  crow: {
+    label: "Corvid Intelligence",
+    className: "crow-cloud",
+    traits: [
+      "communication",
+      "learning",
+      "creativity",
+      "tool use",
+      "sociality",
+      "optimization",
+    ],
+    description:
+      "Strong non-primate comparison: problem solving, causal learning, tool use, memory, and social signaling.",
+  },
+  octopus: {
+    label: "Octopus Intelligence",
+    className: "octopus-cloud",
+    traits: [
+      "learning",
+      "creativity",
+      "tool use",
+      "embodiment",
+      "subjective experience",
+      "optimization",
+    ],
+    description:
+      "Distant animal comparison: distributed embodiment, exploration, problem solving, and alien-feeling perception.",
+  },
+  jerboa: {
+    label: "Jerboa Intelligence",
+    className: "jerboa-cloud",
+    traits: ["learning", "embodiment", "sociality", "featherless biped"],
+    description:
+      "A deliberately weak overlap case: embodied learning and bipedal form without most of the traits humans use to flatter themselves.",
   },
   alien: {
     label: "Alien / Other Possible Intelligence",
@@ -65,11 +100,47 @@ const spaces = {
   },
 };
 
+const overlapExamples = [
+  {
+    id: "human-ai",
+    keys: ["human", "ai"],
+    text: "Human + AI: language, recombination, formal reasoning, creativity, theory-building.",
+  },
+  {
+    id: "human-chimp",
+    keys: ["human", "animal"],
+    text: "Human + chimpanzee: social learning, tool use, emotion, communication, embodied culture.",
+  },
+  {
+    id: "human-crow",
+    keys: ["human", "crow"],
+    text: "Human + corvid: tool use, planning, social signaling, flexible problem solving.",
+  },
+  {
+    id: "human-octopus",
+    keys: ["human", "octopus"],
+    text: "Human + octopus: embodiment, exploration, learning, possible subjective experience.",
+  },
+  {
+    id: "human-jerboa",
+    keys: ["human", "jerboa"],
+    text: "Human + jerboa: featherless biped, embodiment, basic learning.",
+  },
+  {
+    id: "ai-crow",
+    keys: ["ai", "crow"],
+    text: "AI + corvid: optimization, learning, tool-oriented problem solving.",
+  },
+];
+
 function ProbabilitySpaceInteractive() {
   const [visible, setVisible] = useState({
     human: true,
     ai: true,
     animal: true,
+    crow: true,
+    octopus: true,
+    jerboa: false,
     alien: true,
   });
   const [global, setGlobal] = useState(false);
@@ -122,6 +193,20 @@ function ProbabilitySpaceInteractive() {
             <span>{space.label}</span>
           </button>
         ))}
+        <div className="overlap-callouts" aria-live="polite">
+          {overlapExamples.map((example) => {
+            const active = example.keys.every((key) => visible[key]);
+            return (
+              <button
+                key={example.id}
+                className={`overlap-chip ${example.id} ${active ? "is-active" : ""}`}
+                onClick={() => setSelected(example.keys[0])}
+              >
+                {example.text}
+              </button>
+            );
+          })}
+        </div>
       </div>
 
       <div className="probability-panels">

@@ -155,6 +155,12 @@ a {
   padding-left: 0.75rem;
 }
 
+.toc li.subsection {
+  color: color-mix(in srgb, var(--muted) 78%, transparent);
+  font-size: 0.84rem;
+  padding-left: 1.5rem;
+}
+
 .toc a {
   display: block;
   border-radius: 0.45rem;
@@ -331,13 +337,30 @@ main {
   background: var(--line);
 }
 
-.essay-section h3 {
+.essay-section h3,
+.essay-section h4 {
   grid-column: 2;
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2rem, 4vw, 3.5rem);
   font-weight: 500;
   line-height: 1;
+}
+
+.essay-section h3 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+}
+
+.essay-section h4 {
+  color: var(--accent);
+  font-size: clamp(1.45rem, 2.6vw, 2.35rem);
+}
+
+.section-level-3 {
+  padding-top: clamp(1.5rem, 4vw, 3.5rem);
+}
+
+.section-level-3 .section-rule {
+  background: linear-gradient(90deg, var(--line), transparent);
 }
 
 .section-body {
@@ -512,6 +535,7 @@ figcaption small {
 
 .audio-player,
 .reader-prompt,
+.reader-summary,
 .probability-interactive {
   border: 1px solid var(--line);
   border-radius: 0.5rem;
@@ -633,6 +657,55 @@ input[type="range"] {
   color: var(--muted);
 }
 
+.reader-summary {
+  margin: 3rem 0;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+.reader-summary h4 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.7rem, 3vw, 2.45rem);
+  font-weight: 500;
+}
+
+.reader-summary p {
+  color: var(--muted);
+}
+
+.summary-meter {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  margin: 1.2rem 0;
+  padding: 0.9rem 0;
+}
+
+.reader-summary ul {
+  display: grid;
+  gap: 0.6rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.reader-summary li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 0.45rem;
+  background: var(--panel);
+  padding: 0.8rem;
+}
+
+.reader-summary li span,
+.summary-empty {
+  color: var(--muted);
+}
+
 .probability-toolbar {
   display: flex;
   flex-wrap: wrap;
@@ -679,13 +752,13 @@ input[type="range"] {
 .probability-cloud {
   position: absolute;
   display: grid;
-  width: 48%;
-  height: 38%;
+  width: var(--cloud-width, 48%);
+  height: var(--cloud-height, 38%);
   border: 0;
-  border-radius: 50%;
+  border-radius: var(--cloud-radius, 48% 52% 54% 46% / 44% 50% 50% 56%);
   color: #fff;
   opacity: 0;
-  filter: blur(0.2px);
+  filter: saturate(1.05);
   transform: scale(0.86);
   transition:
     opacity 300ms ease,
@@ -697,11 +770,27 @@ input[type="range"] {
 
 .probability-cloud::before {
   position: absolute;
-  inset: -22%;
-  border-radius: 50%;
+  inset: -34%;
+  border-radius: inherit;
   content: "";
-  filter: blur(30px);
-  opacity: 0.8;
+  background:
+    radial-gradient(circle at 38% 35%, var(--cloud-hot), transparent 0 28%),
+    radial-gradient(circle at 66% 56%, var(--cloud-color), transparent 0 36%),
+    radial-gradient(circle at 45% 72%, var(--cloud-color-soft), transparent 0 32%);
+  filter: blur(34px);
+  opacity: 0.92;
+}
+
+.probability-cloud::after {
+  position: absolute;
+  inset: -4%;
+  border-radius: inherit;
+  content: "";
+  background:
+    radial-gradient(circle at 28% 42%, rgba(255, 255, 255, 0.16), transparent 0 14%),
+    radial-gradient(circle at 72% 62%, rgba(255, 255, 255, 0.08), transparent 0 18%);
+  filter: blur(12px);
+  opacity: 0.5;
 }
 
 .probability-cloud span {
@@ -715,7 +804,7 @@ input[type="range"] {
 }
 
 .probability-cloud.is-visible {
-  opacity: 0.82;
+  opacity: 0.72;
   transform: scale(1);
 }
 
@@ -726,43 +815,87 @@ input[type="range"] {
 }
 
 .human-cloud {
+  --cloud-width: 50%;
+  --cloud-height: 40%;
+  --cloud-color: rgba(255, 132, 101, 0.78);
+  --cloud-color-soft: rgba(255, 132, 101, 0.48);
+  --cloud-hot: rgba(255, 205, 146, 0.72);
+  --cloud-radius: 58% 42% 63% 37% / 46% 58% 42% 54%;
   top: 17%;
   left: 7%;
-  background: rgba(255, 143, 112, 0.28);
-}
-
-.human-cloud::before {
-  background: rgba(255, 143, 112, 0.85);
+  background: rgba(255, 143, 112, 0.1);
 }
 
 .ai-cloud {
+  --cloud-width: 51%;
+  --cloud-height: 39%;
+  --cloud-color: rgba(123, 224, 173, 0.76);
+  --cloud-color-soft: rgba(123, 224, 173, 0.44);
+  --cloud-hot: rgba(205, 255, 228, 0.6);
+  --cloud-radius: 44% 56% 47% 53% / 58% 40% 60% 42%;
   top: 18%;
-  left: 43%;
-  background: rgba(123, 224, 173, 0.28);
+  left: 34%;
+  background: rgba(123, 224, 173, 0.1);
 }
 
-.ai-cloud::before {
-  background: rgba(123, 224, 173, 0.82);
+.chimp-cloud {
+  --cloud-width: 36%;
+  --cloud-height: 30%;
+  --cloud-color: rgba(117, 167, 255, 0.7);
+  --cloud-color-soft: rgba(117, 167, 255, 0.42);
+  --cloud-hot: rgba(201, 222, 255, 0.55);
+  --cloud-radius: 49% 51% 38% 62% / 51% 39% 61% 49%;
+  top: 47%;
+  left: 18%;
+  background: rgba(117, 167, 255, 0.09);
 }
 
-.animal-cloud {
-  top: 48%;
-  left: 22%;
-  background: rgba(117, 167, 255, 0.28);
+.crow-cloud {
+  --cloud-width: 28%;
+  --cloud-height: 25%;
+  --cloud-color: rgba(245, 183, 102, 0.7);
+  --cloud-color-soft: rgba(245, 183, 102, 0.42);
+  --cloud-hot: rgba(255, 231, 184, 0.54);
+  --cloud-radius: 61% 39% 46% 54% / 48% 59% 41% 52%;
+  top: 53%;
+  left: 42%;
+  background: rgba(245, 183, 102, 0.09);
 }
 
-.animal-cloud::before {
-  background: rgba(117, 167, 255, 0.82);
+.octopus-cloud {
+  --cloud-width: 31%;
+  --cloud-height: 28%;
+  --cloud-color: rgba(208, 117, 255, 0.67);
+  --cloud-color-soft: rgba(208, 117, 255, 0.4);
+  --cloud-hot: rgba(238, 203, 255, 0.52);
+  --cloud-radius: 44% 56% 64% 36% / 36% 61% 39% 64%;
+  top: 61%;
+  left: 55%;
+  background: rgba(208, 117, 255, 0.08);
+}
+
+.jerboa-cloud {
+  --cloud-width: 20%;
+  --cloud-height: 18%;
+  --cloud-color: rgba(236, 226, 173, 0.62);
+  --cloud-color-soft: rgba(236, 226, 173, 0.32);
+  --cloud-hot: rgba(255, 250, 218, 0.46);
+  --cloud-radius: 52% 48% 43% 57% / 61% 47% 53% 39%;
+  top: 70%;
+  left: 12%;
+  background: rgba(236, 226, 173, 0.07);
 }
 
 .alien-cloud {
-  top: 41%;
-  left: 55%;
-  background: rgba(217, 140, 255, 0.28);
-}
-
-.alien-cloud::before {
-  background: rgba(217, 140, 255, 0.82);
+  --cloud-width: 34%;
+  --cloud-height: 31%;
+  --cloud-color: rgba(164, 136, 255, 0.7);
+  --cloud-color-soft: rgba(164, 136, 255, 0.38);
+  --cloud-hot: rgba(221, 212, 255, 0.5);
+  --cloud-radius: 39% 61% 53% 47% / 58% 42% 58% 42%;
+  top: 36%;
+  left: 64%;
+  background: rgba(164, 136, 255, 0.08);
 }
 
 .probability-map.is-global .human-cloud {
@@ -772,17 +905,91 @@ input[type="range"] {
 
 .probability-map.is-global .ai-cloud {
   top: 23%;
-  left: 32%;
+  left: 29%;
 }
 
-.probability-map.is-global .animal-cloud {
+.probability-map.is-global .chimp-cloud {
   top: 34%;
-  left: 25%;
+  left: 24%;
+}
+
+.probability-map.is-global .crow-cloud {
+  top: 43%;
+  left: 38%;
+}
+
+.probability-map.is-global .octopus-cloud {
+  top: 50%;
+  left: 47%;
+}
+
+.probability-map.is-global .jerboa-cloud {
+  top: 61%;
+  left: 18%;
 }
 
 .probability-map.is-global .alien-cloud {
   top: 31%;
-  left: 39%;
+  left: 55%;
+}
+
+.overlap-callouts {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.overlap-chip {
+  position: absolute;
+  max-width: 15rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(8, 10, 12, 0.58);
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.76rem;
+  line-height: 1.28;
+  opacity: 0;
+  padding: 0.55rem 0.75rem;
+  pointer-events: auto;
+  transform: translateY(0.6rem);
+  transition:
+    opacity 380ms ease,
+    transform 380ms ease;
+}
+
+.overlap-chip.is-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.human-ai {
+  top: 31%;
+  left: 40%;
+}
+
+.human-chimp {
+  top: 48%;
+  left: 22%;
+}
+
+.human-crow {
+  top: 57%;
+  left: 40%;
+}
+
+.human-octopus {
+  top: 67%;
+  left: 52%;
+}
+
+.human-jerboa {
+  top: 76%;
+  left: 15%;
+}
+
+.ai-crow {
+  top: 51%;
+  left: 53%;
 }
 
 .probability-panels {
@@ -856,6 +1063,7 @@ input[type="range"] {
 
   .section-rule,
   .essay-section h3,
+  .essay-section h4,
   .section-body {
     grid-column: 2;
   }
@@ -936,9 +1144,24 @@ input[type="range"] {
     left: 40%;
   }
 
-  .animal-cloud {
+  .chimp-cloud {
     top: 50%;
     left: 3%;
+  }
+
+  .crow-cloud {
+    top: 47%;
+    left: 37%;
+  }
+
+  .octopus-cloud {
+    top: 64%;
+    left: 45%;
+  }
+
+  .jerboa-cloud {
+    top: 70%;
+    left: 2%;
   }
 
   .alien-cloud {
@@ -948,9 +1171,12 @@ input[type="range"] {
 
   .probability-map.is-global .human-cloud,
   .probability-map.is-global .ai-cloud,
-  .probability-map.is-global .animal-cloud,
+  .probability-map.is-global .chimp-cloud,
+  .probability-map.is-global .crow-cloud,
+  .probability-map.is-global .octopus-cloud,
+  .probability-map.is-global .jerboa-cloud,
   .probability-map.is-global .alien-cloud {
-    left: 18%;
+    left: 14%;
   }
 
   .probability-map.is-global .human-cloud {
@@ -961,11 +1187,58 @@ input[type="range"] {
     top: 28%;
   }
 
-  .probability-map.is-global .animal-cloud {
+  .probability-map.is-global .chimp-cloud {
     top: 38%;
   }
 
+  .probability-map.is-global .crow-cloud {
+    top: 45%;
+  }
+
+  .probability-map.is-global .octopus-cloud {
+    top: 52%;
+  }
+
+  .probability-map.is-global .jerboa-cloud {
+    top: 63%;
+  }
+
   .probability-map.is-global .alien-cloud {
-    top: 48%;
+    top: 57%;
+  }
+
+  .overlap-chip {
+    max-width: 12rem;
+    font-size: 0.68rem;
+  }
+
+  .human-ai {
+    top: 29%;
+    left: 34%;
+  }
+
+  .human-chimp {
+    top: 46%;
+    left: 6%;
+  }
+
+  .human-crow {
+    top: 55%;
+    left: 31%;
+  }
+
+  .human-octopus {
+    top: 71%;
+    left: 39%;
+  }
+
+  .human-jerboa {
+    top: 78%;
+    left: 5%;
+  }
+
+  .ai-crow {
+    top: 49%;
+    left: 49%;
   }
 }

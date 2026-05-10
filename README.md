@@ -70,7 +70,11 @@ src/data/essayContent.js
 
 Replace the sample adaptation paragraphs with the full text from your paper. Keep the chapter and section objects, then update each section's `paragraphs`, `marginNote`, and `blocks`.
 
-The workspace did not include the uploaded paper file when this project was scaffolded, so the current copy is a structured placeholder adaptation based on your requested outline.
+The current copy was extracted from `Intelligence FInal Paper.pdf`, with the first-page disclaimer omitted.
+
+For the text to match your essay exactly, paste each original paragraph into the matching `paragraphs` array in `src/data/essayContent.js`. Each string in that array renders as one essay paragraph. Do not rewrite the React components for text edits.
+
+The PDF extraction preserves the paper's wording, but the PDF text layer may introduce small OCR/layout artifacts. If you notice one, edit only that paragraph string.
 
 ## Adding Images, GIFs, and Audio
 
@@ -86,12 +90,55 @@ Then reference them with root-relative paths:
 src: "/assets/my-image.jpg"
 ```
 
+Where to place media in the essay:
+
+- Chapter hero images: update a chapter's `background`, for example `background: "/assets/my-hero.jpg"`.
+- Regular images/GIFs: add a block with `type: "figure"` inside the relevant section's `blocks` array.
+- YouTube videos: add or edit a block with `type: "youtube"` and change `videoId`.
+- Podcast/audio: put the file at `public/assets/philosophy-podcast.mp3`, or change the `src` in the audio block.
+- Captions and source notes: edit the `caption` and `source` fields in the same block.
+
+Example figure block:
+
+```js
+{
+  type: "figure",
+  src: "/assets/my-ai-painting.jpg",
+  alt: "AI painting from the paper",
+  caption: "Caption text shown under the image.",
+  source: "Source note or citation"
+}
+```
+
+Example GIF block:
+
+```js
+{
+  type: "figure",
+  src: "/assets/process-animation.gif",
+  alt: "Animated generation process",
+  caption: "GIF showing the process."
+}
+```
+
 Recommended replacements:
 
 - Replace `/assets/ai-painting-placeholder.svg` with existing AI painting images from the paper.
 - Add GIFs or animations to `public/assets` and use them in `MediaFigure`.
 - Add the podcast audio at `public/assets/philosophy-podcast.mp3`.
 - Update the Instagram reel placeholder in `essayContent.js` when you decide whether to use a thumbnail image, a link, or an embed.
+
+Extracted paper images are already in:
+
+```text
+public/assets/paper/
+```
+
+They are referenced throughout `src/data/essayContent.js` with paths like:
+
+```js
+src: "/assets/paper/paper-page-13-image-01.png"
+```
 
 ## YouTube Embeds
 
