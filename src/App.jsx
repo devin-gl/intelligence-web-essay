@@ -135,7 +135,9 @@ function App() {
               >
                 {section.marginNote && <MarginNote {...section.marginNote} />}
                 {section.paragraphs.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
+                  <p key={paragraph}>
+                    {typeof paragraph === "string" ? paragraph : <RichText>{paragraph.html}</RichText>}
+                  </p>
                 ))}
                 {section.blocks?.map((block, index) => (
                   <InlineBlock
