@@ -407,8 +407,11 @@ export const chapters = [
         },
         "blocks": [
           {
-            "type": "prompt",
-            "promptId": "philosophyConvincing"
+            "type": "figure",
+            "src": "/assets/paper/paper-page-21-image-01.png",
+            "alt": "ChatGPT prompt screenshot for the AI philosophy podcast",
+            "caption": "The ChatGPT-refined prompt used to shape the AI philosophy podcast.",
+            "source": "Extracted from Intelligence Final Paper, page 21"
           }
         ]
       },
@@ -429,14 +432,8 @@ export const chapters = [
             "description": "Audio player for the AnySpeech podcast experiment included in the project."
           },
           {
-            "type": "podcast"
-          },
-          {
-            "type": "figure",
-            "src": "/assets/paper/paper-page-21-image-01.png",
-            "alt": "AI philosophy podcast or prompt screenshot from the paper",
-            "caption": "Podcast / philosophy experiment artifact from the paper.",
-            "source": "Extracted from Intelligence Final Paper, page 21"
+            "type": "prompt",
+            "promptId": "philosophyConvincing"
           }
         ]
       },
