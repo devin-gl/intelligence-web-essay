@@ -404,7 +404,13 @@ export const chapters = [
         "marginNote": {
           "title": "Communication and theory",
           "body": "This section frames philosophy as collaborative information sharing before the podcast artifact appears."
-        }
+        },
+        "blocks": [
+          {
+            "type": "prompt",
+            "promptId": "philosophyConvincing"
+          }
+        ]
       },
       {
         "id": "case-philosophy-podcast",
@@ -431,10 +437,6 @@ export const chapters = [
             "alt": "AI philosophy podcast or prompt screenshot from the paper",
             "caption": "Podcast / philosophy experiment artifact from the paper.",
             "source": "Extracted from Intelligence Final Paper, page 21"
-          },
-          {
-            "type": "prompt",
-            "promptId": "philosophyConvincing"
           }
         ]
       },
