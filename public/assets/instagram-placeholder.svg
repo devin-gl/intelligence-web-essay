@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" role="img" aria-label="Instagram reel placeholder">
+  <rect width="900" height="1200" rx="38" fill="#111"/>
+  <rect x="64" y="90" width="772" height="1020" rx="24" fill="#222"/>
+  <circle cx="450" cy="520" r="170" fill="#db5f7a"/>
+  <path d="M415 425 L575 520 L415 615 Z" fill="#fff"/>
+  <text x="450" y="930" text-anchor="middle" font-family="Arial, sans-serif" font-size="38" fill="#eee">Instagram Reel Placeholder</text>
+</svg>

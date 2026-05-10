@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-label="AI painting placeholder">
+  <rect width="1200" height="760" fill="#efe8da"/>
+  <path d="M0 630 C230 470 420 805 625 600 S910 390 1200 560 V760 H0 Z" fill="#243b53"/>
+  <path d="M0 210 C190 130 285 270 430 205 S720 20 900 145 S1060 320 1200 240 V0 H0 Z" fill="#c75f4c"/>
+  <circle cx="610" cy="360" r="150" fill="#f2c14e" opacity=".9"/>
+  <path d="M320 520 C470 290 690 600 855 300" fill="none" stroke="#10131c" stroke-width="34" stroke-linecap="round"/>
+  <text x="600" y="710" text-anchor="middle" font-family="Georgia, serif" font-size="34" fill="#10131c">Replace with AI painting</text>
+</svg>
