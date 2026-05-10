@@ -824,6 +824,19 @@ input[type="range"] {
   color: var(--accent);
 }
 
+.probability-primer {
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  background: var(--panel);
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+.probability-primer p:not(.eyebrow) {
+  color: var(--muted);
+  margin: 0.7rem 0 0;
+}
+
 .probability-map {
   position: relative;
   min-height: min(66vw, 31rem);
@@ -848,13 +861,23 @@ input[type="range"] {
 .probability-cloud {
   position: absolute;
   display: grid;
-  width: var(--cloud-width, 48%);
-  height: var(--cloud-height, 38%);
+  width: var(--cloud-size, 40%);
+  aspect-ratio: 1;
+  height: auto;
   border: 0;
-  border-radius: var(--cloud-radius, 48% 52% 54% 46% / 44% 50% 50% 56%);
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      var(--cloud-core) 0%,
+      var(--cloud-bright) 16%,
+      var(--cloud-mid) 38%,
+      var(--cloud-soft) 62%,
+      rgba(255, 255, 255, 0) 82%
+    );
   color: #fff;
   opacity: 0;
-  filter: saturate(1.05);
+  filter: saturate(1.12);
   transform: scale(0.86);
   transition:
     opacity 300ms ease,
@@ -866,27 +889,28 @@ input[type="range"] {
 
 .probability-cloud::before {
   position: absolute;
-  inset: -34%;
-  border-radius: inherit;
+  inset: -16%;
+  border-radius: 50%;
   content: "";
   background:
-    radial-gradient(circle at 38% 35%, var(--cloud-hot), transparent 0 28%),
-    radial-gradient(circle at 66% 56%, var(--cloud-color), transparent 0 36%),
-    radial-gradient(circle at 45% 72%, var(--cloud-color-soft), transparent 0 32%);
-  filter: blur(34px);
-  opacity: 0.92;
+    radial-gradient(
+      circle at 50% 50%,
+      var(--cloud-mid) 0%,
+      var(--cloud-soft) 44%,
+      rgba(255, 255, 255, 0) 76%
+    );
+  filter: blur(28px);
+  opacity: 0.78;
 }
 
 .probability-cloud::after {
   position: absolute;
-  inset: -4%;
-  border-radius: inherit;
+  inset: 8%;
+  border-radius: 50%;
   content: "";
-  background:
-    radial-gradient(circle at 28% 42%, rgba(255, 255, 255, 0.16), transparent 0 14%),
-    radial-gradient(circle at 72% 62%, rgba(255, 255, 255, 0.08), transparent 0 18%);
-  filter: blur(12px);
-  opacity: 0.5;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.18), transparent 46%);
+  filter: blur(10px);
+  opacity: 0.52;
 }
 
 .probability-cloud span {
@@ -900,7 +924,7 @@ input[type="range"] {
 }
 
 .probability-cloud.is-visible {
-  opacity: 0.72;
+  opacity: 0.84;
   transform: scale(1);
 }
 
@@ -911,87 +935,73 @@ input[type="range"] {
 }
 
 .human-cloud {
-  --cloud-width: 50%;
-  --cloud-height: 40%;
-  --cloud-color: rgba(255, 132, 101, 0.78);
-  --cloud-color-soft: rgba(255, 132, 101, 0.48);
-  --cloud-hot: rgba(255, 205, 146, 0.72);
-  --cloud-radius: 58% 42% 63% 37% / 46% 58% 42% 54%;
+  --cloud-size: 42%;
+  --cloud-core: rgba(255, 235, 199, 0.9);
+  --cloud-bright: rgba(255, 132, 101, 0.72);
+  --cloud-mid: rgba(255, 132, 101, 0.34);
+  --cloud-soft: rgba(255, 132, 101, 0.08);
   top: 17%;
   left: 7%;
-  background: rgba(255, 143, 112, 0.1);
 }
 
 .ai-cloud {
-  --cloud-width: 51%;
-  --cloud-height: 39%;
-  --cloud-color: rgba(123, 224, 173, 0.76);
-  --cloud-color-soft: rgba(123, 224, 173, 0.44);
-  --cloud-hot: rgba(205, 255, 228, 0.6);
-  --cloud-radius: 44% 56% 47% 53% / 58% 40% 60% 42%;
+  --cloud-size: 42%;
+  --cloud-core: rgba(225, 255, 239, 0.84);
+  --cloud-bright: rgba(123, 224, 173, 0.7);
+  --cloud-mid: rgba(123, 224, 173, 0.32);
+  --cloud-soft: rgba(123, 224, 173, 0.08);
   top: 18%;
   left: 34%;
-  background: rgba(123, 224, 173, 0.1);
 }
 
 .chimp-cloud {
-  --cloud-width: 36%;
-  --cloud-height: 30%;
-  --cloud-color: rgba(117, 167, 255, 0.7);
-  --cloud-color-soft: rgba(117, 167, 255, 0.42);
-  --cloud-hot: rgba(201, 222, 255, 0.55);
-  --cloud-radius: 49% 51% 38% 62% / 51% 39% 61% 49%;
+  --cloud-size: 31%;
+  --cloud-core: rgba(222, 234, 255, 0.76);
+  --cloud-bright: rgba(117, 167, 255, 0.62);
+  --cloud-mid: rgba(117, 167, 255, 0.3);
+  --cloud-soft: rgba(117, 167, 255, 0.08);
   top: 47%;
   left: 18%;
-  background: rgba(117, 167, 255, 0.09);
 }
 
 .crow-cloud {
-  --cloud-width: 28%;
-  --cloud-height: 25%;
-  --cloud-color: rgba(245, 183, 102, 0.7);
-  --cloud-color-soft: rgba(245, 183, 102, 0.42);
-  --cloud-hot: rgba(255, 231, 184, 0.54);
-  --cloud-radius: 61% 39% 46% 54% / 48% 59% 41% 52%;
+  --cloud-size: 25%;
+  --cloud-core: rgba(255, 235, 198, 0.72);
+  --cloud-bright: rgba(245, 183, 102, 0.62);
+  --cloud-mid: rgba(245, 183, 102, 0.28);
+  --cloud-soft: rgba(245, 183, 102, 0.08);
   top: 53%;
   left: 42%;
-  background: rgba(245, 183, 102, 0.09);
 }
 
 .octopus-cloud {
-  --cloud-width: 31%;
-  --cloud-height: 28%;
-  --cloud-color: rgba(208, 117, 255, 0.67);
-  --cloud-color-soft: rgba(208, 117, 255, 0.4);
-  --cloud-hot: rgba(238, 203, 255, 0.52);
-  --cloud-radius: 44% 56% 64% 36% / 36% 61% 39% 64%;
+  --cloud-size: 28%;
+  --cloud-core: rgba(242, 218, 255, 0.7);
+  --cloud-bright: rgba(208, 117, 255, 0.6);
+  --cloud-mid: rgba(208, 117, 255, 0.28);
+  --cloud-soft: rgba(208, 117, 255, 0.08);
   top: 61%;
   left: 55%;
-  background: rgba(208, 117, 255, 0.08);
 }
 
 .jerboa-cloud {
-  --cloud-width: 20%;
-  --cloud-height: 18%;
-  --cloud-color: rgba(236, 226, 173, 0.62);
-  --cloud-color-soft: rgba(236, 226, 173, 0.32);
-  --cloud-hot: rgba(255, 250, 218, 0.46);
-  --cloud-radius: 52% 48% 43% 57% / 61% 47% 53% 39%;
+  --cloud-size: 18%;
+  --cloud-core: rgba(255, 250, 218, 0.65);
+  --cloud-bright: rgba(236, 226, 173, 0.54);
+  --cloud-mid: rgba(236, 226, 173, 0.24);
+  --cloud-soft: rgba(236, 226, 173, 0.07);
   top: 70%;
   left: 12%;
-  background: rgba(236, 226, 173, 0.07);
 }
 
 .alien-cloud {
-  --cloud-width: 34%;
-  --cloud-height: 31%;
-  --cloud-color: rgba(164, 136, 255, 0.7);
-  --cloud-color-soft: rgba(164, 136, 255, 0.38);
-  --cloud-hot: rgba(221, 212, 255, 0.5);
-  --cloud-radius: 39% 61% 53% 47% / 58% 42% 58% 42%;
+  --cloud-size: 32%;
+  --cloud-core: rgba(231, 222, 255, 0.68);
+  --cloud-bright: rgba(164, 136, 255, 0.58);
+  --cloud-mid: rgba(164, 136, 255, 0.27);
+  --cloud-soft: rgba(164, 136, 255, 0.07);
   top: 36%;
   left: 64%;
-  background: rgba(164, 136, 255, 0.08);
 }
 
 .probability-map.is-global .human-cloud {

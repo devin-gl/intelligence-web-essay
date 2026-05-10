@@ -482,7 +482,23 @@ export const chapters = [
             "alt": "Early visual representation of probability spaces",
             "caption": "Early Visual Representation of my Probability Spaces.",
             "source": "Extracted from Intelligence Final Paper, page 26"
-          },
+          }
+        ]
+      },
+      {
+        "id": "validity-probability-interactive",
+        "title": "Interactive Probability Space",
+        "level": 3,
+        "paragraphs": [
+          "The map below treats each intelligence as a circular probability field. Opacity and brightness are highest at the center, where a creature or system is most likely to express a given capability, and slowly diffuse outward as that probability weakens.",
+          "The traits listed in the overlap panel are not universal definitions or measured scores. They are concrete capabilities that seem to have shared high probabilities across the visible spaces, such as tool use, bipedal motion, visual art creation, music composition, symbolic writing, and philosophical argument.",
+          "Use the toggles to show or hide each intelligence space. Click a circle to update the selected-region description. Turn on Combine into Global Probability Space to see the spaces slide into a shared map, making their overlaps easier to compare."
+        ],
+        "marginNote": {
+          "title": "How to use it",
+          "body": "The circles are conceptual probability clouds, not a Venn diagram and not a quantified dataset."
+        },
+        "blocks": [
           {
             "type": "probability"
           },
