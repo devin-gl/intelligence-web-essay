@@ -56,6 +56,10 @@ function MarginArtifact({ artifact }) {
     );
   }
 
+  if (artifact.type === "label") {
+    return <div className="margin-artifact-label">{artifact.text}</div>;
+  }
+
   return (
     <p className="margin-artifact margin-artifact-text">
       {artifact.text || artifact.body}

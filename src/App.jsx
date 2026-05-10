@@ -89,15 +89,17 @@ function ParagraphWithArtifacts({ paragraph, artifacts = [] }) {
   return (
     <div className={matches.length ? "paragraph-with-artifacts" : "paragraph-without-artifacts"}>
       <p>{matches.length ? <RichText>{markedText}</RichText> : typeof paragraph === "string" ? paragraph : <RichText>{paragraph.html}</RichText>}</p>
-      {matches.map((artifact, index) => (
+      {matches.length > 0 && (
         <MarginNote
-          id={`artifact-${artifact.anchor.replace(/[^a-z0-9]+/gi, "-").toLowerCase()}-${index}`}
-          key={`${artifact.anchor}-${index}`}
-          title={artifact.title || "Margin"}
-          body={artifact.body}
-          artifacts={artifact.artifacts}
+          id={`artifact-${matches[0].anchor.replace(/[^a-z0-9]+/gi, "-").toLowerCase()}-0`}
+          title={matches.length > 1 ? "Margin notes" : matches[0].title || "Margin"}
+          body={matches.length > 1 ? "Notes attached to the underlined phrases in this paragraph." : matches[0].body}
+          artifacts={matches.flatMap((match) => [
+            { type: "label", text: match.title || "Margin" },
+            ...(match.artifacts || []),
+          ])}
         />
-      ))}
+      )}
     </div>
   );
 }
@@ -144,7 +146,7 @@ function App() {
             <h1 id="essay-title">{titleMatter.title}</h1>
             <p className="subtitle">{titleMatter.subtitle}</p>
             <p className="byline">{titleMatter.author}</p>
-            <p className="abstract">{titleMatter.abstract}</p>
+            {titleMatter.abstract && <p className="abstract">{titleMatter.abstract}</p>}
           </div>
         </section>
 

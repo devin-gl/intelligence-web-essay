@@ -5,7 +5,7 @@ export const titleMatter = {
   "title": "Intelligence",
   "subtitle": "AI, Human Qualities, and the Fear of Encroachment",
   "author": "By Devin Grooms-Lee",
-  "abstract": "An interactive web-book adaptation of Intelligence Final Paper, using the essay text while excluding the first-page disclaimer."
+  "abstract": ""
 };
 
 export const chapters = [
@@ -28,10 +28,6 @@ export const chapters = [
           "That being said, artificial intelligence has somewhat of a unique position in the proposed dichotomy as a clear product of human creation that still maintains a commonly ascribed sense of autonomy, power, and difference. Thus the paper will naturally investigate the relationship and confluence between humanity and AI. Parts i) and ii) will take us through a range of different authors, ideas, and fears, thus they will still naturally introduce a fair bit of philosophical discussion and synthesis. Part iii) will be a much more rich philosophical form where theory and argument dominate content. Along the way you will also find interactive tools, audio-visual segments, and pieces of entertainment.",
           "I’ve built this project in the style of the engineer who organized the Google summit, Blaise Aguera y Arcas’ web book, What is Intelligence?, both for the callback, and because I thought it would be the most elegant and effective way to introduce my ideas."
         ],
-        "marginNote": {
-          "title": "Adapted from the paper",
-          "body": "This section uses the essay text extracted from the PDF, excluding the first-page disclaimer."
-        },
         "marginArtifacts": [
           {
                     "anchor": "Blaise Aguera y Arcas’ web book",
