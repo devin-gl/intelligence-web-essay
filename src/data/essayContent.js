@@ -258,6 +258,13 @@ export const chapters = [
                 "kind": "prompt",
                 "title": "Prompt 2",
                 "text": "Don't copy Rembrandt, create something new."
+              },
+              {
+                "kind": "generated",
+                "title": "Generated Image 2",
+                "src": "/assets/paper/paper-page-18-image-01.png",
+                "alt": "Second AI baroque painting after Rembrandt correction prompt",
+                "caption": "Second baroque output after the correction prompt."
               }
             ]
           },
@@ -278,10 +285,6 @@ export const chapters = [
             "type": "prompt",
             "promptId": "paintingsHuman"
           },
-          {
-            "type": "prompt",
-            "promptId": "authorship"
-          }
         ]
       },
       {
@@ -289,11 +292,23 @@ export const chapters = [
         "title": "Music",
         "level": 3,
         "paragraphs": [
+          "The music studies ask a parallel question to the painting studies: can generated sound produce a recognizably human affect, and does that affect change once the listener knows the source?"
+        ],
+        "marginNote": {
+          "title": "Nested studies",
+          "body": "IngaRose and HNL are treated as separate music case studies so each can have its own evidence and convincingness slider."
+        }
+      },
+      {
+        "id": "case-art-music-ingarose",
+        "title": "IngaRose: Celebrate Me",
+        "level": 4,
+        "paragraphs": [
           "IngaRose is an AI generated music publisher. The song ?Celebrate Me? recently topped the charts last month. Below is the Youtube audio as well as some human reactions in comment form. Perhaps these are AI generated too."
         ],
         "marginNote": {
-          "title": "AI music",
-          "body": "The raw links have been moved out of the body and replaced with embedded videos, source notes, and a separate HNL subsection."
+          "title": "AI charting music",
+          "body": "The raw YouTube links are represented as embedded videos followed by comment evidence and a convincingness slider."
         },
         "blocks": [
           {
@@ -311,13 +326,6 @@ export const chapters = [
             "videoId": "NdWX0QmnM8M",
             "title": "Second AI generated music example",
             "caption": "Second YouTube audio example included in the paper."
-          },
-          {
-            "type": "figure",
-            "src": "/assets/paper/paper-page-18-image-01.png",
-            "alt": "AI generated music example artwork or screenshot",
-            "caption": "IngaRose / AI generated music example from the paper.",
-            "source": "Extracted from Intelligence Final Paper, page 18"
           },
           {
             "type": "figure",
@@ -349,14 +357,14 @@ export const chapters = [
           },
           {
             "type": "prompt",
-            "promptId": "care"
+            "promptId": "ingaroseConvincing"
           }
         ]
       },
       {
         "id": "case-art-music-hnl",
         "title": "HNL AI Soundtrack",
-        "level": 3,
+        "level": 4,
         "paragraphs": [
           "The Honolulu Airport recently began playing 17 AI generated songs on loop with airport / hawaiian themed lyrics.",
           "The songs have sparked some online controversy for their misrepresentation of Hawaiian music and culture as well as a general disdain for the quality of the ?AI slop?."
@@ -377,6 +385,10 @@ export const chapters = [
             "caption": "HNL AI Soundtrack reel.",
             "source": "https://www.instagram.com/reel/DXf2zauCVKi/",
             "href": "https://www.instagram.com/reel/DXf2zauCVKi/"
+          },
+          {
+            "type": "prompt",
+            "promptId": "hnlConvincing"
           }
         ]
       },
@@ -419,6 +431,10 @@ export const chapters = [
             "alt": "AI philosophy podcast or prompt screenshot from the paper",
             "caption": "Podcast / philosophy experiment artifact from the paper.",
             "source": "Extracted from Intelligence Final Paper, page 21"
+          },
+          {
+            "type": "prompt",
+            "promptId": "philosophyConvincing"
           }
         ]
       },
@@ -481,29 +497,17 @@ export const chapters = [
 ];
 
 export const readerPrompts = {
-  "human": {
-    "question": "Did this feel human?",
-    "options": [
-      "Yes",
-      "Not sure",
-      "No"
-    ]
+  "paintingsHuman": {
+    "question": "How convincingly human are the paintings overall?"
   },
-  "authorship": {
-    "question": "Does authorship matter?",
-    "options": [
-      "Always",
-      "Sometimes",
-      "Less than effect"
-    ]
+  "ingaroseConvincing": {
+    "question": "How convincingly human is the IngaRose song?"
   },
-  "care": {
-    "question": "Would you care if this was made by AI?",
-    "options": [
-      "Yes",
-      "Depends",
-      "No"
-    ]
+  "hnlConvincing": {
+    "question": "How convincingly human is the HNL AI soundtrack?"
+  },
+  "philosophyConvincing": {
+    "question": "How convincingly human is the AI philosophy podcast?"
   }
 };
 

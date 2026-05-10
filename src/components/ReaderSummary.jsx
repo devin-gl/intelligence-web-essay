@@ -1,5 +1,5 @@
 function ReaderSummary({ prompts, responses }) {
-  const answered = Object.entries(responses).filter(([, response]) => response?.answer);
+  const answered = Object.entries(responses).filter(([, response]) => response?.intensity != null);
   const averageConviction =
     answered.length === 0
       ? 0
@@ -19,7 +19,7 @@ function ReaderSummary({ prompts, responses }) {
       <h4>Your path through the essay</h4>
       <p>{dominantThread}</p>
       <div className="summary-meter">
-        <span>Average conviction</span>
+        <span>Average convincingness</span>
         <strong>{averageConviction}%</strong>
       </div>
       {answered.length > 0 ? (
@@ -27,9 +27,7 @@ function ReaderSummary({ prompts, responses }) {
           {answered.map(([id, response]) => (
             <li key={id}>
               <span>{prompts[id]?.question}</span>
-              <strong>
-                {response.answer} / {response.intensity}%
-              </strong>
+              <strong>{response.intensity}%</strong>
             </li>
           ))}
         </ul>
