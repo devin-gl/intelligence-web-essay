@@ -77,6 +77,25 @@ function InlineBlock({ block, responses, onPromptAnswer }) {
   return <Component {...block} />;
 }
 
+function ParagraphWithArtifacts({ paragraph, artifacts = [] }) {
+  const text = typeof paragraph === "string" ? paragraph : paragraph.html;
+  const matches = artifacts.filter((artifact) => text?.includes(artifact.anchor));
+
+  return (
+    <div className={matches.length ? "paragraph-with-artifacts" : "paragraph-without-artifacts"}>
+      <p>{typeof paragraph === "string" ? paragraph : <RichText>{paragraph.html}</RichText>}</p>
+      {matches.map((artifact, index) => (
+        <MarginNote
+          key={`${artifact.anchor}-${index}`}
+          title={artifact.title || "Margin"}
+          body={artifact.body}
+          artifacts={artifact.artifacts}
+        />
+      ))}
+    </div>
+  );
+}
+
 function App() {
   const [theme, setTheme] = useState("dark");
   const [responses, setResponses] = useState({});
@@ -134,10 +153,12 @@ function App() {
                 level={section.level}
               >
                 {section.marginNote && <MarginNote {...section.marginNote} />}
-                {section.paragraphs.map((paragraph) => (
-                  <p key={paragraph}>
-                    {typeof paragraph === "string" ? paragraph : <RichText>{paragraph.html}</RichText>}
-                  </p>
+                {section.paragraphs.map((paragraph, paragraphIndex) => (
+                  <ParagraphWithArtifacts
+                    key={`${section.id}-${paragraphIndex}`}
+                    paragraph={paragraph}
+                    artifacts={section.marginArtifacts}
+                  />
                 ))}
                 {section.blocks?.map((block, index) => (
                   <InlineBlock

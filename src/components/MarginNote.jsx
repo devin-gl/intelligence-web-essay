@@ -47,6 +47,15 @@ function MarginArtifact({ artifact }) {
     );
   }
 
+  if (artifact.type === "definition") {
+    return (
+      <div className="margin-artifact margin-artifact-definition">
+        <strong>Definition</strong>
+        <p>{artifact.text}</p>
+      </div>
+    );
+  }
+
   return (
     <p className="margin-artifact margin-artifact-text">
       {artifact.text || artifact.body}

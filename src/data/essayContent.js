@@ -31,7 +31,24 @@ export const chapters = [
         "marginNote": {
           "title": "Adapted from the paper",
           "body": "This section uses the essay text extracted from the PDF, excluding the first-page disclaimer."
-        }
+        },
+        "marginArtifacts": [
+          {
+                    "anchor": "Blaise Aguera y Arcas’ web book",
+                    "title": "Webbook reference",
+                    "artifacts": [
+                              {
+                                        "type": "link",
+                                        "label": "What is Intelligence? Webbook By Blaise Aguera y Arcas",
+                                        "href": "https://whatisintelligence.antikythera.org/"
+                              },
+                              {
+                                        "type": "comment",
+                                        "text": "A small screenshot of the Antikythera webbook can be added here later as an image artifact."
+                              }
+                    ]
+          }
+]
       }
     ]
   },
@@ -48,7 +65,7 @@ export const chapters = [
         "title": "Hofstadter",
         "level": 2,
         "paragraphs": [
-          "Underlying the fears Hofstadter expressed to the Google group, was the immediate, growing prospect of humanlike intelligence from the mechanics of a machine. Indeed the enthusiasm and allure surrounding AI that all of the engineers seemingly latched onto so tightly in GEB was incubated in an environment where its manifestation was distant. In other words, Hofstadter had lived under the impression that an AGI system wouldn’t come about until long after he cared about its consequences. Meanwhile, the generation of thinkers he inspired had progressed the project so intently and fervently that they made “artificial narrow intelligence” of such calibers to trick experts in their field in a Turing test(maybe the zeroth level of irony!).",
+          "Underlying the fears Hofstadter expressed to the Google group, was the immediate, growing prospect of humanlike intelligence from the mechanics of a machine. Indeed the enthusiasm and allure surrounding AI that all of the engineers seemingly latched onto so tightly in GEB was incubated in an environment where its manifestation was distant. In other words, Hofstadter had lived under the impression that an AGI system wouldn’t come about until long after he cared about its consequences. Meanwhile, the generation of thinkers he inspired had progressed the project so intently and fervently that they made “artificial narrow intelligence” of such calibers to trick experts in their field in a Turing test.",
           "One of the creations that Hofstadter was particularly frightened by was the “Experiment in Musical Intelligence”(EMI) machine, which can create new music in the style of a given composer. He describes that music, a medium he once felt transmitted a “direct message from the emotional heart of the human being who composed it”, could now be convincingly composed by a computer program. Because Hofstadter employed such empathetic tendencies to his listening experience, the EMI was essentially an identity theft device taking advantage of his emotional sensitivity and feigning human connection. Having understood the trickery, Hofstadter explains that what he thought was the most surefire way to test for humanity was systematically gameable.",
           "Consequently, humanity’s identity in his eyes was being encroached upon, and by none other than its own creation(at the higher level the instance marks the same encroachment into “God’s” or a/the creator’s territory by humans insofar as we can understand it as the creation of new intelligence). Deeper than just emotional mimicry, there is a broader fear of replication and domination across humanity’s modes of action in his words. Despite his skepticism. Hofstadter expresses concern with the singularity, or AGI as we know it today, admitting he was “terrified by the scenarios” of Kurzweil’s singularity prediction as well. I’d argue that Hofstadter’s fear is completely natural.",
           "Never before have we encountered a thing that can compose music and win at chess and now perform dozens of other tasks better than most people, all the while not being a person. Just those truths alone are no doubt instinctually scary for many, Hof included, and what that fear reveals is that in many ways the human identity is built upon the capabilities we have that everything else we know of does not have and has not had as long as we’ve known them(additionally we would not expect them to have such capabilities). This is the basis for why instances of AI capable of doing all the things humans do, and in many respects doing them better, is problematic for Hofstadter.",
@@ -57,19 +74,62 @@ export const chapters = [
         "marginNote": {
           "title": "Computational replication",
           "body": "Hofstadter frames AI as an encroachment on expressive and intellectual qualities humans use to recognize themselves."
-        }
+        },
+        "marginArtifacts": [
+          {
+                    "anchor": "artificial narrow intelligence” of such calibers to trick experts in their field in a Turing test",
+                    "title": "Irony note",
+                    "artifacts": [
+                              {
+                                        "type": "comment",
+                                        "text": "Perhaps the zeroth level of irony."
+                              }
+                    ]
+          },
+          {
+                    "anchor": "“artificial narrow intelligence”",
+                    "title": "Definition",
+                    "artifacts": [
+                              {
+                                        "type": "definition",
+                                        "text": "An artificial system that can only perform a specific task, given enough labeled training data: object detection, face recognition, guessing whether a product review was positive or negative."
+                              }
+                    ]
+          },
+          {
+                    "anchor": "“Experiment in Musical Intelligence”(EMI) machine",
+                    "title": "Audio example",
+                    "artifacts": [
+                              {
+                                        "type": "audio",
+                                        "label": "David Cope?s EMI music generation in the style of Chopin",
+                                        "src": "/assets/Chopin-Style-Mazurka-4-Emmy-Cope.mp3"
+                              }
+                    ]
+          },
+          {
+                    "anchor": "Consequently, humanity’s identity in his eyes was being encroached upon, and by none other than its own creation",
+                    "title": "Comment",
+                    "artifacts": [
+                              {
+                                        "type": "comment",
+                                        "text": "though that may be more reflective of modern regression than historical vision, but nevertheless is hard to disagree with on the basic levels."
+                              }
+                    ]
+          }
+]
       },
       {
         "id": "fear-wiener",
         "title": "Wiener",
         "level": 2,
         "paragraphs": [
-          "Norbert Wiener was one of the most respected thinkers in the computation and machine learning space at its inception. A mathematician at MIT, he is perhaps best known, certainly by Agerua y Arcas, as the (co-)father of “cybernetics” which he loosely grounds in the study of messages of control and which can be practically exemplified by the function of an electromechanical self-leading turret on a war plane. Wiener entered fatherhood with the publishing of his 1948 work Cybernetics: Or Control and Communication in the Animal and the Machine, but for the purposes of this paper his 1950, The Human Use of Human Beings offers greater utility.",
-          "This book has been the highway of my intellectual journey through the subjects of the paper and almost in spite of but mostly thanks to its extremely broad employment of argumentative examples and obligatory accompaniment of technical discussion paints it a precocious view of the development of industry, machine, artificial intelligence, and society. It is a cautionary work, and thoughtful in its analysis, yet unafraid of bold claims so poignant they create an illusion of timelessness in their politics, though that may be more reflective of modern regression than historical vision, but nevertheless is hard to disagree with on the basic levels.",
+          {"html": "Norbert Wiener was one of the most respected thinkers in the computation and machine learning space at its inception. A mathematician at MIT, he is perhaps best known, certainly by Agerua y Arcas, as the (co-)father of “cybernetics” which he loosely grounds in the study of messages of control and which can be practically exemplified by the function of an electromechanical self-leading turret on a war plane. Wiener entered fatherhood with the publishing of his 1948 work Cybernetics: Or Control and Communication in the Animal and the Machine, but for the purposes of this paper his 1950, <a href=\"https://monoskop.org/images/9/90/Wiener_Norbert_The_Human_Use_of_Human_Beings_1950.pdf\" target=\"_blank\" rel=\"noreferrer\">The Human Use of Human Beings</a> offers greater utility."},
+          "This book has been the highway of my intellectual journey through the subjects of the paper and almost in spite of but mostly thanks to its extremely broad employment of argumentative examples and obligatory accompaniment of technical discussion paints it a precocious view of the development of industry, machine, artificial intelligence, and society. It is a cautionary work, and thoughtful in its analysis, yet unafraid of bold claims so poignant they create an illusion of timelessness in their politics.",
           "The book is heavily influenced by Wiener’s seminal text before it as well as the post WWII climate with many references to Wiener’s cybernetic warfare, Fascist manifestations, discussion of the paradigm shifts accompanying nuclear technology and more. Above all, however, Wiener is concerned with the future of the machine as it pertains to the human, and the centering of the human by humans amidst their overlap with machine function, that is, the human use of human beings. He is acutely aware of the zeitgeist of not just his age but also the professional and intellectual space he occupies. The result is a deliberate aim to remove the structure propelling machine progress insofar as it minimizes the human element and maximizes the capital element.",
           "Despite being a book about humans, for humans, it does a stellar job of characterizing AI before its baby steps, whisking the reader through a mixture of colonial navigation technique, African diamond extraction, textile explosion, pharmaceutical advancement and more. I will come back to it for more than just the fears it presents as it is above all a piece of work written by and for humans providing a launchpad for the various ideas I’ll aim to progress in the paper. With the introduction out of the way, I will now begin by explaining Wiener’s fear. He begins his project by offering a brief discussion on the nature of humans, and what sets us apart from other things.",
           "Biologically he rejects the idea that man is a featherless biped, since plucked chickens belong to the same category. Metaphysically he rejects the idea that humans are defined by their possession of a soul because it is not a scientifically accessible concept, nor a rigorously agreed upon one. What he settles on, as the thing that describes us uniquely, is that we are talking animals. What he means by this is odd, interesting, almost undeniable, and cybernetic. Wiener conceptualizes the world as being made of patterns, which are essentially similar to arrangements.",
-          "Of the patterns there is a select category that can be called messages based on their conveying of information from one point to another, where information can be thought of as somewhat of a measure of the regularity of a pattern. Interestingly he cites music as a form of message - more on this later. He argues that the irregular is always more common than the regular, meaning information is inversely related to the probability of a pattern. The more likely pattern is irregular, and contains less information. He justifies the abundance of irregularity by appealing to the statistical mechanical notion of entropy, which is the inclination of all things to become more disordered over time. Thus information and entropy can be seen as enemies in Wiener.",
+          "Of the patterns there is a select category that can be called messages based on their conveying of information from one point to another, where information can be thought of as somewhat of a measure of the regularity of a pattern.  He argues that the irregular is always more common than the regular, meaning information is inversely related to the probability of a pattern. The more likely pattern is irregular, and contains less information. He justifies the abundance of irregularity by appealing to the statistical mechanical notion of entropy, which is the inclination of all things to become more disordered over time. Thus information and entropy can be seen as enemies in Wiener.",
           "The human is tightly intertwined into this framework as a talking animal. It is our communicative agency that centers messaging and conveying information at the heart of our nature. Furthermore, there is a desire within us to seek out messages, attain new information, and continue the cycle. Wiener describes this desire as a necessity in our nature, advancing it from merely descriptive to defining. Accordingly, the desire includes the notion of feedback, or something that we can test against our expectations to improve our information. We constantly sense the world and learn from consequences, adjusting our behavior to correct ourselves dynamically and to intake more information in one never ending feedback loop.",
           "We learn and improvise, interpret, reinterpret, respond to changes. This give and take produces the open-ended, creative creature that Wiener calls a human. Having characterized the human, we can now begin to understand its endangerment by the hand of the machine. Wiener describes this endangerment across two events, one historical and the other speculative. The first was the Industrial Revolution. Spurred on by the creation of the steam engine and bankrolled by the textile boom, machines eclipsed humans as the superior source of productive force. Machines simply became too energy efficient for humans to rival them.",
           "Wiener describes how “industrial revolution up to the present has displaced man and the beast as a source of power” (180), and how “In all important respects, the man who has nothing but his physical power to sell has nothing to sell which it is worth anyone·s money to buy” (180). The economic considerations are extremely important to Wiener’s fear, as it is that landscape which drives decision making in the modern world, and which handed the reins of production over to the machine. He describes how it is the same value scheme that will produce the further encroachment of his predicted “Second Industrial Revolution”. This is where Wiener produces some of the most insightful, visionary, and borderline wizardly ideas about technology of his time.",
@@ -87,7 +147,51 @@ export const chapters = [
               "href": "https://monoskop.org/images/9/90/Wiener_Norbert_The_Human_Use_of_Human_Beings_1950.pdf"
             }
           ]
-        }
+        },
+        "marginArtifacts": [
+          {
+                    "anchor": "Of the patterns there is a select category that can be called messages based on their conveying of information from one point to another",
+                    "title": "Music as message",
+                    "artifacts": [
+                              {
+                                        "type": "comment",
+                                        "text": "Interestingly he cites music as a form of message - more on this later."
+                              }
+                    ]
+          },
+          {
+                    "anchor": "The first was the Industrial Revolution",
+                    "title": "Industrial Revolution",
+                    "artifacts": [
+                              {
+                                        "type": "image",
+                                        "src": "/assets/Industrial-Revolution.gif",
+                                        "caption": "Workers using machine power during the Industrial Revolution"
+                              }
+                    ]
+          },
+          {
+                    "anchor": "automatic doors of Penn Station as an early instance of this advancement",
+                    "title": "Automatic doors",
+                    "artifacts": [
+                              {
+                                        "type": "image",
+                                        "src": "/assets/Automatic-door.jpg",
+                                        "caption": "A woman and a red cap exit the newly installed Automatic Doors at Penn Station, 1950"
+                              }
+                    ]
+          },
+          {
+                    "anchor": "the taping",
+                    "title": "Modern wording",
+                    "artifacts": [
+                              {
+                                        "type": "comment",
+                                        "text": "Or coding, loosely in more modern terms."
+                              }
+                    ]
+          }
+]
       },
       {
         "id": "fear-bostrom",
@@ -102,7 +206,19 @@ export const chapters = [
         "marginNote": {
           "title": "Doom",
           "body": "Bostrom formalizes fear as the worst-case trajectory of goal-oriented superintelligence."
-        }
+        },
+        "marginArtifacts": [
+          {
+                    "anchor": "Orthogonality Thesis",
+                    "title": "Orthogonality Thesis",
+                    "artifacts": [
+                              {
+                                        "type": "comment",
+                                        "text": "The orthogonality thesis suggests that we cannot blithely assume that a superintelligence will necessarily share any of the final values stereotypically associated with wisdom and intellectual development in humans: scientific curiosity, benevolent concern for others, spiritual enlightenment and contemplation."
+                              }
+                    ]
+          }
+]
       },
       {
         "id": "fear-her",
@@ -116,7 +232,31 @@ export const chapters = [
         "marginNote": {
           "title": "Artificial intimacy",
           "body": "Her turns the fear toward love, friendship, and the possibility that intimacy itself can be computationally replicated."
-        }
+        },
+        "marginArtifacts": [
+          {
+                    "anchor": "Catherine feels when she learns about his relationship",
+                    "title": "Her",
+                    "artifacts": [
+                              {
+                                        "type": "image",
+                                        "src": "/assets/Shes-Not-Just-A-Computer-Joaquin-Phoenix-Her.gif",
+                                        "caption": "Theodore?s response to Catherine?s disgust"
+                              }
+                    ]
+          },
+          {
+                    "anchor": "I’d propose the hypothetical that every consciousness is simulated",
+                    "title": "Simulation",
+                    "artifacts": [
+                              {
+                                        "type": "image",
+                                        "src": "/assets/matrix.gif",
+                                        "caption": "Sci-fi depiction of a simulated reality from The Matrix"
+                              }
+                    ]
+          }
+]
       }
     ]
   },
@@ -486,7 +626,7 @@ export const chapters = [
         "level": 2,
         "paragraphs": [
           "Humans naturally carry a sense of superiority and indeed it would be hard to live without such an idea. We have some incredible and unique physical capabilities, able to outrun most any prey they choose, but most of our pride is derived from the accomplishments of our intellectual prowess. We have figured out how to traverse and transform our planet’s surface, conquered its sky, and explored the great beyond in the stars. We have domesticated, or at least subordinated, every other natural intelligence we’ve ever known. In fact, most of the dangers that modern humans fear are man-made.",
-          "Climate change, war, rent, etc are immediate products of human society so far removed from the influence of other intelligence that we rarely feel the need to consider cognition of different origins. If you are like Hofstadter and believe that humanity is somewhat defined by the things we can do, this prospect of AI surpassing human intellect indeed brings problematic and frightening consequences. It is fitting that the only two Copernican revolutions whereby humans were forced to reckon with the power of another intelligence are with (arguably) two works of human creation: God and AI. But it is only with this perspective that we can more easily observe how valid our feelings of uniqueness truly are.",
+          "Climate change, war, rent, etc are immediate products of human society so far removed from the influence of other intelligence that we rarely feel the need to consider cognition of different origins. If you are like Hofstadter and believe that humanity is somewhat defined by the things we can do, this prospect of AI surpassing human intellect indeed brings problematic and frightening consequences.  But it is only with this perspective that we can more easily observe how valid our feelings of uniqueness truly are.",
           "In reality, the characteristics and capabilities explored in this paper have never been exclusive to humans. As Wiener points out, we share the categorization of “featherless biped” with plucked fickes, kangaroos, and jerboas(include pictures of featherless bipeds). In terms of capability, Birds produce melodic, periodic songs to express feelings, communicate intention, and attract mates. Pufferfish create geometric crop circles to impress mates. Primates create natural paintings with intense color exploration and abstract form. They also analytically make tools and iterate based on a somewhat scientific method, though they aren’t as keen on sharing such advancements with their fellows as humans.",
           "It has long been suspected animals think philosophically at least in small ways and it is perfectly reasonable to imagine an alien species with similar philosophical tendencies to humans. The point is that in theory, intellectual and creative endeavors are not reserved for humans or for simply the most powerful intelligence, they are accessible to intelligence of all forms given the right circumstances. The question of whether humanity should safeguard the creation of human-inspired art and philosophy for human creation only will be up to leaders in AI developing systems that mimic us, but regardless, the innovation in these domains was never and will never be our lonely project.",
           "Similarly to Hofstadter, Wiener is somewhat obsessed with the idea that humans are defined by the necessity of information gathering and expression in our existence. But the impending reality is that AI can participate in that same expression and gather in exactly the same ways humans do(again non phenomenologically). Thus humans, or anything for that matter, are not described completely or uniquely by what they do. I’d like to propose a reconfiguration of the framing, from definition based on rigid boundary and reductive characterization to description based on probability and liberal observation.",
@@ -497,6 +637,29 @@ export const chapters = [
           "title": "Core argument",
           "body": "The interactive follows the essay's shift from definition by boundary to description by probability."
         },
+        "marginArtifacts": [
+          {
+                    "anchor": "If you are like Hofstadter and believe that humanity is somewhat defined by the things we can do",
+                    "title": "Copernican note",
+                    "artifacts": [
+                              {
+                                        "type": "comment",
+                                        "text": "It is fitting that the only two Copernican revolutions whereby humans were forced to reckon with the power of another intelligence are with (arguably) two works of human creation: God and AI."
+                              }
+                    ]
+          },
+          {
+                    "anchor": "and jerboas",
+                    "title": "Jerboa",
+                    "artifacts": [
+                              {
+                                        "type": "image",
+                                        "src": "/assets/Jerboa.jpg",
+                                        "caption": "Photograph of a Jerboa"
+                              }
+                    ]
+          }
+        ],
         "blocks": [
           {
             "type": "figure",
