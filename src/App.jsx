@@ -13,10 +13,12 @@ import EssaySection from "./components/EssaySection.jsx";
 import MarginNote from "./components/MarginNote.jsx";
 import MediaFigure from "./components/MediaFigure.jsx";
 import PodcastDialogue from "./components/PodcastDialogue.jsx";
+import PromptStudy from "./components/PromptStudy.jsx";
 import ProbabilitySpaceInteractive from "./components/ProbabilitySpaceInteractive.jsx";
 import PullQuote from "./components/PullQuote.jsx";
 import ReaderPrompt from "./components/ReaderPrompt.jsx";
 import ReaderSummary from "./components/ReaderSummary.jsx";
+import RichText from "./components/RichText.jsx";
 import TableOfContents from "./components/TableOfContents.jsx";
 import YouTubeEmbed from "./components/YouTubeEmbed.jsx";
 
@@ -25,8 +27,10 @@ const componentMap = {
   comments: CommentCardsBlock,
   figure: MediaFigure,
   podcast: PodcastDialogue,
+  promptStudy: PromptStudy,
   probability: ProbabilitySpaceInteractive,
   pullquote: PullQuote,
+  richText: RichText,
   prompt: ReaderPrompt,
   summary: ReaderSummary,
   youtube: YouTubeEmbed,
