@@ -562,6 +562,25 @@ main {
   text-underline-offset: 0.2rem;
 }
 
+.artifact-anchor {
+  color: inherit;
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-decoration-thickness: 2px;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 0.22rem;
+}
+
+.artifact-anchor:hover,
+.artifact-anchor:focus {
+  color: var(--accent);
+}
+
+.margin-note:target .margin-note-body {
+  border-left-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 7%, transparent);
+}
+
 figcaption {
   margin-top: 0.8rem;
   color: var(--muted);

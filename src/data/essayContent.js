@@ -43,6 +43,12 @@ export const chapters = [
                                         "href": "https://whatisintelligence.antikythera.org/"
                               },
                               {
+                                        "type": "image",
+                                        "src": "/assets/what-is-intelligence.png",
+                                        "alt": "Screenshot of the What is Intelligence webbook",
+                                        "caption": "Visual reference for the Antikythera webbook format."
+                              },
+                              {
                                         "type": "comment",
                                         "text": "A small screenshot of the Antikythera webbook can be added here later as an image artifact."
                               }
@@ -71,10 +77,6 @@ export const chapters = [
           "Never before have we encountered a thing that can compose music and win at chess and now perform dozens of other tasks better than most people, all the while not being a person. Just those truths alone are no doubt instinctually scary for many, Hof included, and what that fear reveals is that in many ways the human identity is built upon the capabilities we have that everything else we know of does not have and has not had as long as we’ve known them(additionally we would not expect them to have such capabilities). This is the basis for why instances of AI capable of doing all the things humans do, and in many respects doing them better, is problematic for Hofstadter.",
           "It hits upon perhaps the most historically and contemporarily common fear surrounding the rise of AI, one that is best explained by the next author."
         ],
-        "marginNote": {
-          "title": "Computational replication",
-          "body": "Hofstadter frames AI as an encroachment on expressive and intellectual qualities humans use to recognize themselves."
-        },
         "marginArtifacts": [
           {
                     "anchor": "artificial narrow intelligence” of such calibers to trick experts in their field in a Turing test",

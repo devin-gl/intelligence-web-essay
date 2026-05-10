@@ -80,12 +80,18 @@ function InlineBlock({ block, responses, onPromptAnswer }) {
 function ParagraphWithArtifacts({ paragraph, artifacts = [] }) {
   const text = typeof paragraph === "string" ? paragraph : paragraph.html;
   const matches = artifacts.filter((artifact) => text?.includes(artifact.anchor));
+  const markedText = matches.reduce((current, artifact, index) => {
+    const id = `artifact-${artifact.anchor.replace(/[^a-z0-9]+/gi, "-").toLowerCase()}-${index}`;
+    const marker = `<a class="artifact-anchor" href="#${id}">${artifact.anchor}</a>`;
+    return current.replace(artifact.anchor, marker);
+  }, text || "");
 
   return (
     <div className={matches.length ? "paragraph-with-artifacts" : "paragraph-without-artifacts"}>
-      <p>{typeof paragraph === "string" ? paragraph : <RichText>{paragraph.html}</RichText>}</p>
+      <p>{matches.length ? <RichText>{markedText}</RichText> : typeof paragraph === "string" ? paragraph : <RichText>{paragraph.html}</RichText>}</p>
       {matches.map((artifact, index) => (
         <MarginNote
+          id={`artifact-${artifact.anchor.replace(/[^a-z0-9]+/gi, "-").toLowerCase()}-${index}`}
           key={`${artifact.anchor}-${index}`}
           title={artifact.title || "Margin"}
           body={artifact.body}

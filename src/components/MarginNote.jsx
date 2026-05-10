@@ -63,11 +63,11 @@ function MarginArtifact({ artifact }) {
   );
 }
 
-function MarginNote({ title, body, artifacts = [] }) {
+function MarginNote({ id, title, body, artifacts = [] }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <aside className="margin-note">
+    <aside className="margin-note" id={id}>
       <button className="margin-note-toggle" onClick={() => setOpen((value) => !value)}>
         <span>{title}</span>
         <span aria-hidden="true">{open ? "-" : "+"}</span>
