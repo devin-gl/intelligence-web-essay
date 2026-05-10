@@ -79,7 +79,14 @@ export const chapters = [
         ],
         "marginNote": {
           "title": "Human use",
-          "body": "Wiener anchors the paper's account of communication, feedback, machine control, and the human role in cybernetic systems."
+          "body": "Wiener anchors the paper's account of communication, feedback, machine control, and the human role in cybernetic systems.",
+          "artifacts": [
+            {
+              "type": "link",
+              "label": "Read Wiener PDF",
+              "href": "https://monoskop.org/images/9/90/Wiener_Norbert_The_Human_Use_of_Human_Beings_1950.pdf"
+            }
+          ]
         }
       },
       {
@@ -151,7 +158,15 @@ export const chapters = [
         ],
         "marginNote": {
           "title": "Adapted layout",
-          "body": "This section reorganizes the paper's painting material into web-native prompt studies instead of copying the PDF flow."
+          "body": "This section reorganizes the paper's painting material into web-native prompt studies instead of copying the PDF flow.",
+          "artifacts": [
+            {
+              "type": "image",
+              "src": "/assets/paper/paper-page-13-image-02.png",
+              "alt": "Edward Hopper reference image",
+              "caption": "A small reference image can live in the margin while the main text moves through the prompt study."
+            }
+          ]
         },
         "blocks": [
           {
@@ -308,7 +323,14 @@ export const chapters = [
         ],
         "marginNote": {
           "title": "AI charting music",
-          "body": "The raw YouTube links are represented as embedded videos followed by comment evidence and a convincingness slider."
+          "body": "The raw YouTube links are represented as embedded videos followed by comment evidence and a convincingness slider.",
+          "artifacts": [
+            {
+              "type": "comment",
+              "author": "Margin comment",
+              "text": "Audience reaction can be treated as evidence, not just decoration. Replace this with a specific YouTube or social comment later."
+            }
+          ]
         },
         "blocks": [
           {
@@ -496,7 +518,14 @@ export const chapters = [
         ],
         "marginNote": {
           "title": "How to use it",
-          "body": "The circles are conceptual probability clouds, not a Venn diagram and not a quantified dataset."
+          "body": "The circles are conceptual probability clouds, not a Venn diagram and not a quantified dataset.",
+          "artifacts": [
+            {
+              "type": "quote",
+              "text": "Probability here means a loose descriptive tendency, not a numerical claim.",
+              "source": "Margin note"
+            }
+          ]
         },
         "blocks": [
           {

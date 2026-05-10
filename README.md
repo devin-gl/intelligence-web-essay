@@ -167,6 +167,55 @@ It includes:
 
 Edit the `spaces` object in that file to adjust labels, descriptions, and traits.
 
+## Margin Artifacts
+
+Sections can include richer margin material through `marginNote.artifacts` in `src/data/essayContent.js`.
+
+Supported artifact types:
+
+```js
+{
+  type: "image",
+  src: "/assets/example.jpg",
+  alt: "Short accessible description",
+  caption: "Caption shown under the image."
+}
+```
+
+```js
+{
+  type: "comment",
+  author: "YouTube comment",
+  text: "Comment text."
+}
+```
+
+```js
+{
+  type: "quote",
+  text: "Short quotation or aside.",
+  source: "Source note"
+}
+```
+
+```js
+{
+  type: "audio",
+  label: "Audio aside",
+  src: "/assets/audio-note.mp3"
+}
+```
+
+```js
+{
+  type: "link",
+  label: "Read source",
+  href: "https://example.com"
+}
+```
+
+On desktop these appear in the right margin. On mobile they collapse inside the expandable note.
+
 ## Deploying to Vercel
 
 1. Push the project to GitHub.
