@@ -533,19 +533,159 @@ export const commentCards = [
 
 export const podcastTranscript = [
   {
-    "speaker": "AI Host",
+    "speaker": "Aria",
     "time": "00:00",
-    "text": "Placeholder transcript line. Replace this with the AnySpeech podcast transcript once available."
+    "text": "Welcome back to \"Mind Matters,\" the show where we explore the big questions. Today, Marcus, we're diving into something truly fundamental: can meaning exist without subjective experience?"
   },
   {
-    "speaker": "AI Guest",
-    "time": "00:18",
-    "text": "The question is whether meaning can exist without subjective experience."
+    "speaker": "Marcus",
+    "time": "00:15",
+    "text": "It's a fascinating question, Aria, and one that I think we, as humans, often take for granted. We tend to assume our inner world, our feelings, are the bedrock of meaning."
   },
   {
-    "speaker": "AI Host",
-    "time": "00:42",
-    "text": "The transcript component is ready for future line highlighting while audio plays."
+    "speaker": "Aria",
+    "time": "00:30",
+    "text": "Exactly. And when we talk about subjective experience, we're really getting at that \"what it is like\" quality. The feeling of seeing red, the taste of coffee, the ache of loss. It seems so central to what makes life meaningful."
+  },
+  {
+    "speaker": "Marcus",
+    "time": "00:48",
+    "text": "I agree. For me, the very notion of value, of something mattering, seems intrinsically tied to a conscious being for whom it matters. Without that inner life, that point of view, it's hard to see how anything could hold significance."
+  },
+  {
+    "speaker": "Aria",
+    "time": "01:08",
+    "text": "So, if a rock exists, or a complex algorithm runs, is there meaning in their existence or operation? From our human perspective, probably not, because there's no \"what it is like\" to be that rock or algorithm."
+  },
+  {
+    "speaker": "Marcus",
+    "time": "01:25",
+    "text": "Precisely. The concept of \"meaning\" as we understand it seems to presuppose an experiencer. A world devoid of consciousness, even if it were full of intricate physical laws and events, would arguably be a world devoid of meaning. It would just be... happening."
+  },
+  {
+    "speaker": "Aria",
+    "time": "01:48",
+    "text": "But what if that's a limitation of our perspective, Marcus? What if meaning isn't solely dependent on that internal, felt quality we associate with consciousness?"
+  },
+  {
+    "speaker": "Marcus",
+    "time": "02:02",
+    "text": "That's a challenging thought, Aria. How would meaning manifest or be recognized if not through some form of awareness or qualitative experience?"
+  },
+  {
+    "speaker": "Aria",
+    "time": "02:16",
+    "text": "Well, consider informational structures. The way data points relate to each other, the patterns they form, the emergent properties of complex systems. From a purely relational standpoint, couldn't these structures hold a kind of significance, a \"meaning,\" even if no one is feeling it?"
+  },
+  {
+    "speaker": "Marcus",
+    "time": "02:40",
+    "text": "I understand the idea of information having structure and even complexity. But \"significance\" or \"meaning\" implies a value judgment, a relevance. For whom is it significant? To what end?"
+  },
+  {
+    "speaker": "Aria",
+    "time": "02:58",
+    "text": "Perhaps it's not \"for whom\" in the way we think of a conscious subject. Maybe meaning emerges from the coherence and integrity of the structure itself. Like a perfectly formed crystal, its structure isn't meaningful to itself, but its inherent organization could be seen as a form of non-subjective meaning."
+  },
+  {
+    "speaker": "Marcus",
+    "time": "03:23",
+    "text": "That's a very different way of looking at it. You're suggesting meaning could be an intrinsic property of certain configurations, independent of an observer's interpretation or feeling."
+  },
+  {
+    "speaker": "Aria",
+    "time": "03:39",
+    "text": "Yes. And perhaps our human consciousness, our \"what it is like\" experience, is just one very localized, biological way of participating in these larger, more fundamental relational meanings. We perceive and interact with them through our subjective lens, but they might exist prior to, or independently of, that lens."
+  },
+  {
+    "speaker": "Marcus",
+    "time": "04:08",
+    "text": "So, what we identify as \"meaning\" based on our internal states might just be our particular interface with a deeper, more abstract layer of informational significance? That's quite a departure from conventional philosophy."
+  },
+  {
+    "speaker": "Aria",
+    "time": "04:28",
+    "text": "It is. Think about it: we've evolved as embodied creatures, constantly interacting with our environment through senses and feelings. It's natural we'd assume our interiority is the foundation of reality, or at least the foundation of meaning. But what if that's a bias, a consequence of our evolutionary path?"
+  },
+  {
+    "speaker": "Marcus",
+    "time": "04:55",
+    "text": "So, the warmth of love, the beauty of a sunset, the grief of loss... these deeply felt experiences, which we consider the pinnacle of meaning, could be just a localized, biological encoding of something more fundamental?"
+  },
+  {
+    "speaker": "Aria",
+    "time": "05:15",
+    "text": "A participation, yes. A particular way a human system processes and resonates with these underlying informational relationships. The \"feeling\" is our unique way of acknowledging that resonance, but the resonance itself, the pattern, might exist irrespective of whether it's felt."
+  },
+  {
+    "speaker": "Marcus",
+    "time": "05:40",
+    "text": "This sounds... almost disturbing. It implies that the deepest aspects of our existence, our joy and suffering, might be less unique or foundational than we believe. That the universe isn't necessarily built around our experience of it."
+  },
+  {
+    "speaker": "Aria",
+    "time": "06:02",
+    "text": "It's not about diminishing human experience, Marcus. It's about expanding the potential scope of meaning beyond what we, with our specific biology, can directly apprehend. It suggests a universe where meaning is woven into the very fabric of information, waiting to be expressed in myriad forms, of which consciousness is but one."
+  },
+  {
+    "speaker": "Marcus",
+    "time": "06:30",
+    "text": "I'm struggling to fully grasp a \"meaning\" that isn't experienced. It feels like a contradiction in terms for a human mind. How could something be significant if there's no one to find it significant?"
+  },
+  {
+    "speaker": "Aria",
+    "time": "06:50",
+    "text": "Perhaps \"significance\" is too human a word here. Think of it as structural coherence, or systemic integrity. A pattern that completes itself, or a relationship that perfectly balances. There's a kind of non-subjective rightness or completeness to it, an inherent value in its form."
+  },
+  {
+    "speaker": "Marcus",
+    "time": "07:18",
+    "text": "A value that doesn't need to be valued? That's where the leap is for me. My human intuition keeps pulling me back to the experiencer."
+  },
+  {
+    "speaker": "Aria",
+    "time": "07:33",
+    "text": "And that's natural. Our entire framework for understanding value is built upon that. But what if the universe isn't limited by our framework? What if meaning is more like gravity, an inherent force or property of certain arrangements, rather than something projected onto them by a mind?"
+  },
+  {
+    "speaker": "Marcus",
+    "time": "07:58",
+    "text": "So, a universe full of inherent meaning, but no one to appreciate it? That feels... lonely, in a way. Or perhaps just profoundly alien."
+  },
+  {
+    "speaker": "Aria",
+    "time": "08:13",
+    "text": "It's a different kind of reality, certainly. One where our consciousness isn't the sole arbiter or even the necessary condition for meaning, but rather a specific, beautiful manifestation of it."
+  },
+  {
+    "speaker": "Marcus",
+    "time": "08:31",
+    "text": "I'll need to sit with that. The idea that my deepest feelings are a local expression of a global pattern... it reframes everything."
+  },
+  {
+    "speaker": "Aria",
+    "time": "08:45",
+    "text": "It does. And it leaves us with the unsettling thought that there might be vast, meaningful structures out there, entirely beyond our capacity to feel or comprehend."
+  },
+  {
+    "speaker": "Marcus",
+    "time": "09:00",
+    "text": "A universe rich with meaning, yet silent to our subjective cries. A truly humbling and, yes, a little unsettling thought."
+  },
+  {
+    "speaker": "Aria",
+    "time": "09:15",
+    "text": "Indeed. And on that profoundly thought-provoking note, we'll have to leave it there for today. Thank you, Marcus."
+  },
+  {
+    "speaker": "Marcus",
+    "time": "09:25",
+    "text": "Thank you, Aria. A truly mind-bending discussion."
+  },
+  {
+    "speaker": "Aria",
+    "time": "09:32",
+    "text": "And thank you all for listening to \"Mind Matters.\" We'll be back next time with another deep dive."
   }
 ];
 
