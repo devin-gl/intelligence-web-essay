@@ -94,10 +94,14 @@ function ParagraphWithArtifacts({ paragraph, artifacts = [] }) {
           id={`artifact-${matches[0].anchor.replace(/[^a-z0-9]+/gi, "-").toLowerCase()}-0`}
           title={matches.length > 1 ? "Margin notes" : matches[0].title || "Margin"}
           body={matches.length > 1 ? "Notes attached to the underlined phrases in this paragraph." : matches[0].body}
-          artifacts={matches.flatMap((match) => [
-            { type: "label", text: match.title || "Margin" },
-            ...(match.artifacts || []),
-          ])}
+          artifacts={
+            matches.length > 1
+              ? matches.flatMap((match) => [
+                  { type: "label", text: match.title || "Margin" },
+                  ...(match.artifacts || []),
+                ])
+              : matches[0].artifacts || []
+          }
         />
       )}
     </div>
